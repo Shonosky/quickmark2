@@ -17,42 +17,86 @@
         h3 {
       color: black;
     }
+        body {height: 10000px}
+        
+        .change-size{
+            font-size: 1.4em !important;
+        }
+        #change-navbar-header-size{
+            font-size: 2em !important;
+        }
   </style>
 </head>
 
 <body>
-
-    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
-        <a class="navbar-brand" href="#">Yoda Lives</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-primary ">
+        <a id="change-navbar-header-size" class="navbar-brand" href="https://getbootstrap.com/" target="_blank">Learning Bootstrap</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="change-size" class="nav-item active">
+                    <a class="nav-link py-4" href="#row1">Row #1 <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Gallery</a>
+                <li class="change-size" class="nav-item active">
+                    <a class="nav-link py-4" href="#row2">Row #2</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Fan club</a>
+                <li class="change-size" class="nav-item active">
+                    <a class="nav-link py-4" href="#row3">Row #3</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Members only</a>
+                
+                
+                <li class="nav-item dropdown ">
+                    <a  class="nav-link py-4 dropdown-toggle btn-lg" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        My Favourite Sites
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item btn-lg" href="https://www.reddit.com/" target="_blank">Reddit</a>
+                        <a class="dropdown-item btn-lg" href="https://www.youtube.com/" target="_blank">Youtube</a>
+                        <a class="dropdown-item btn-lg" href="http://mrmccormack.com/" target="_blank">Mr.Mccormack.com</a>
+                        <a class="dropdown-item" aria-disabled="true">
+                            <div class="dropdown-divider"></div>
+                            <h3>Free Content Libraries</h3>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item btn-lg" href="https://unsplash.com/" target="_blank">Unsplash</a>
+                        <a class="dropdown-item btn-lg" href="https://isorepublic.com/" target="_blank">ISORepublic</a>
+                        <a class="dropdown-item btn-lg" href="https://search.creativecommons.org/" target="_blank">Creative Commons Search</a>
+                    </div>
                 </li>
             </ul>
+<!--Learned the google search bar here: https://alt-web.com/TUTORIALS/?id=add_google_to_bootstrap_search_bar -->
+            <script>
+//Enter domain of site to search (left the domainroot blank because it was adding the domain name to the search. It works fine this way)
+var domainroot=""
+function Gsitesearch(curobj){
+curobj.q.value= domainroot+" "+curobj.qfront.value
+}
+</script>
+            <form class="search form-inline my-2 my-lg-0" action="http://www.google.com/search" method="get" onSubmit="Gsitesearch(this)" role="search">
+                <input name="q" type="hidden" />
+                <input style="text-align: center" name="qfront" type="search" required class="searchField form-control " placeholder="Search Google" maxlength="50" />
+                <input class="btn btn-outline-success my-2 my-sm-0" type="submit" class="search-button" value="Search" />
+            </form>
         </div>
     </nav>
 
     <div class="jumbotron text-center">
-        <h1>Yoda lives here.</h1>
-        <p>My first Bootstrap 4.x Yoda Page</p>
-        <p><small>by Mr. M. - Confederation College</small></p>
-        <a class="btn btn-primary" href="#" role="button">Yoda's videos &raquo;</a>
+        <h1>First Sem #2 Project</h1>
+        <p>My first Bootstrap 4.x</p>
+        <p><small>By Samuel Shonosky</small></p>
+        <a class="btn btn-primary" href="https://github.com/login" role="button" target="_blank">To Github Sign In &raquo;</a>
     </div>
+    <div class="text-center" style="margin-bottom:  30px"><i class="fas fa-rocket fa-xs"></i>
+        <i class="fas fa-rocket fa-sm"></i>
+        <i class="fas fa-rocket fa-lg"></i>
+        <i class="fas fa-rocket fa-2x"></i></div>
+
     <!-- FIRST ROW -->
-    <div class="container">
+    <div id="row1" class="container">
         <div class="row">
 
             <div class="col-md-3">
@@ -61,18 +105,15 @@
                 <span style="font-size: 3em; color: Tomato;">
                     <i class="fas fa-stroopwafel"></i>
                 </span>
-                <i class="fas fa-rocket fa-xs"></i>
-                <i class="fas fa-rocket fa-sm"></i>
-                <i class="fas fa-rocket fa-lg"></i>
-                <i class="fas fa-rocket fa-2x"></i>
-                <p>Lorem ipsum dolor..</p>
-                <p>Ut enim ad..</p>
+
+                <p></p>
+                <p></p>
             </div>
 
             <div class="col-md-3">
                 <h3>Column 2</h3>
-                <p>Lorem ipsum dolor..</p>
-                <p>Ut enim ad..</p>
+                <p>Supreme Overlord:</p>
+                <p>Elon Churchill</p>
                 <img src="https://i.kym-cdn.com/photos/images/original/001/408/308/d49.jpg" class="img-fluid" alt="Responsive image">
             </div>
 
@@ -107,11 +148,12 @@
         </div>
     </div>
     <!-- SECOND ROW -->
-    <div class="container">
+    <div id="row2" class="container">
         <div class="row">
-            <div class="col-sm">
-                <h3 class="text-center">Instrument 1</h3>
+            <div class="col-md-6">
+
                 <div class="card" style="width: 18rem;">
+                    <h3 class="text-center">Instrument 1</h3>
                     <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Panart_hang.jpg" class="card-img-top" alt="Hang Instrument">
                     <div class="card-body">
                         <h5 class="card-title">Hang Instrument</h5>
@@ -124,8 +166,8 @@
             </div>
 
             <div class="col-sm">
-                <h3 class="text-center" >Instrument 2</h3>
                 <div class="card" style="width: 18rem;">
+                    <h3 class="text-center">Instrument 2</h3>
                     <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Triangle_001.jpg" class="card-img-top" alt="Triangle Instrument">
                     <div class="card-body">
                         <h5 class="card-title">Triangle Instrument</h5>
@@ -138,17 +180,18 @@
 
         </div>
     </div>
-    <div class="container">
+    <!-- THIRD ROW -->
+    <div id="row3" class="container">
         <div class="row">
-            <!-- THIRD ROW -->
+
             <div class="col-ms">
                 <h3 class="text-center">Canadian Landscape</h3>
                 <img class="img-fluid" src="https://images.unsplash.com/photo-1506104489822-562ca25152fe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2549&q=80" alt="yoda">
                 <div class="text-center">
-                <i class="fas fa-rocket fa-xs"></i>
-                <i class="fas fa-rocket fa-sm"></i>
-                <i class="fas fa-rocket fa-lg"></i>
-                <i class="fas fa-rocket fa-2x"></i>
+                    <i class="fas fa-rocket fa-xs"></i>
+                    <i class="fas fa-rocket fa-sm"></i>
+                    <i class="fas fa-rocket fa-lg"></i>
+                    <i class="fas fa-rocket fa-2x"></i>
                 </div>
             </div>
         </div>
@@ -159,4 +202,5 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
 </body>
+
 </html>
